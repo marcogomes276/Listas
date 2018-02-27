@@ -1,8 +1,12 @@
 <template>
-	<div id="appFilter">
-		<main>
-			<section class="container">
+	<div id="html-principal">
+		<main class="main">
+			<section class="sec">
 				<form  class="form">
+					<div tituloesubtitulo>
+						<h1 class="titulo">Listas de alunos do vnw</h1>
+						<h2 class="subtitulo">modulo 2</h2>
+					</div>
 					<div>
 						<label>Ordenar por:</label>
 						<select class="form-control" v-model="configs.orderBy">
@@ -87,5 +91,23 @@ export default{
 </script>
 
 <style scoped>
-
+#html-principal{
+	background: black;
+	color: white;
+	height: 80vh;
+	margin:0;
+	padding: 0;
+}
+.tituloesubtitulo{
+	margin: 0;
+	padding: 0;
+}
+.titulo{
+	margin: 0;
+	padding: 0;	
+}
+.subtitulo{
+	margin: 0;
+	padding: 0;
+}
 </style>
