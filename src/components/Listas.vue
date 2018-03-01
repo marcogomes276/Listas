@@ -8,14 +8,14 @@
 				
 				<form  class="form">
 					
-					<div class="A=titulos">
+					<div class="A-titulos">
 			
 						<h1 class="titulo">Listas de alunos do vnw</h1>
 						<h2 class="subtitulo">modulo 2</h2>
 					
 					</div>
 					
-					<div class="B=usuario">
+					<div class="B-usuario">
 					
 						<label>Ordenar por:</label>
 					
@@ -28,7 +28,7 @@
 					
 					</div>
 					
-					<div class="C=cresente">
+					<div class="C-resente">
 						
 						<label>Orderm:</label>
 					    
@@ -41,7 +41,7 @@
 					
 					</div>
 					
-					<div class="Filtrar">
+					<div class="D-Filtrar">
 				      
 				      <label>Filtrar</label>
 				      
@@ -57,7 +57,10 @@
 
 			</section>
 
-			<Alunos :list="list"></Alunos>
+			<Alunos :list="list" 
+				@deleteStudant="value => {deleteStudant = value}"
+				@remove="value => {remove = value}"
+			></Alunos>
 
 		</main>
 
@@ -72,6 +75,8 @@ export default{
 	name: 'Filtrar',
 	data(){
 		return{
+			remove: false,
+			deleteStudant: '',
 			configs:{
 		    	orderBy: 'name',
 		    	order: 'desc',
@@ -98,6 +103,15 @@ export default{
 		}
 		
 	},
+	watch:{
+		deleteStudant(){
+			if(this.remove === true){
+				this.alunos.splice(this.deleteStudant,1)
+				this.remove = false
+				this.deleteStudant = ''
+			}
+		}
+	},
 	computed:{
 		list() {
       		const filter = this.configs.filter
@@ -114,40 +128,49 @@ export default{
  	components: {
  		Alunos
  	}   
-
 }
 </script>
 
 <style scoped>
+
 #html-principal{
-	background: white;
-	color: #6D90EA;
-	height: 80vh;
-	margin:0;
-	padding: 0;
-}
-.sec{
-	margin: 0;
-	padding: 0;
-	background-color: white;
+background-color: black;
+margin: 0;
+padding: 0;
 }
 .main{
-	margin: 0;
-	padding: 0;
-	background-color: white;
+background-color: red;
+margin: 0;
+padding: 0;
 }
-.A{
-	margin: 0;
-	padding: 0;
+.sec{
+background-color: blue;
+margin: 0;
+padding: 0;
 }
-.titulo{
-	margin: 0;
-	padding: 0;
-	color: #6D90EA;	
+.form{
+background-color: green;
+margin: 0;
+padding: 0;
 }
-.subtitulo{
-	margin: 0;
-	padding: 0;
-	color:  #DEE3F5;
+.A-titulos{
+background-color: pink;
+margin: 0;
+padding: 0;
+}
+.B-usuario{
+background-color: yellow;
+margin: 0;
+padding: 0;
+}
+.C-cresente{
+background-color: #FF7F00;
+margin: 0;
+padding: 0;
+}
+.D-Filtrar{
+background-color: #8B668B;
+margin: 0;
+padding: 0;
 }
 </style>
