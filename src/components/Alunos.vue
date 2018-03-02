@@ -36,11 +36,11 @@ export default{
 
 <style>
 body{
-	margin-top: 220px;
+	margin: 0;
 	padding: 0; 
 }
 #app{
-	margin: 60px;
+	margin: 20px;
 	padding: 0;
 }
 .A{

@@ -1,6 +1,6 @@
-<template>
+<template> 
 
-	<div id="html-principal">
+	<div id="html-principal"> 	
 	
 		<main class="main">
 			
@@ -14,25 +14,25 @@
 						<h2 class="subtitulo">modulo 2</h2>
 					
 					</div>
-					
+					<hr>
 					<div class="B-usuario">
 					
 						<label>Ordenar por:</label>
 					
-						<select class="form-control" v-model="configs.orderBy">
+						<select class="nome-idade" v-model="configs.orderBy">
         				
-        					<option value="name">Nome</option>				
-        					<option value="age">Idade</option>
+        					<option value="name" class="nome">Nome</option>				
+        					<option value="age" class="idade">Idade</option>
 					
 					</select>
 					
 					</div>
 					
-					<div class="C-resente">
+					<div class="C-cresente">
 						
 						<label>Orderm:</label>
 					    
-					    <select class="form-control" v-model="configs.order">
+					    <select class="nome-idade" v-model="configs.order">
 					        
 					        <option value="asc">Crescente</option>
 					        <option value="desc">Decrescente</option> 
@@ -43,13 +43,13 @@
 					
 					<div class="D-Filtrar">
 				      
-				      <label>Filtrar</label>
-				      
 				      <input
 				      	type="text" 
-				      	class="excrever"
+				      	class="nome-idade"
 				      	placeholder="Filtrar por nome"
 				      	v-model="configs.filter">
+
+				      	<button class="nome-idade">Filtrar</button>
 
 				    </div>
 
@@ -134,43 +134,62 @@ export default{
 <style scoped>
 
 #html-principal{
-background-color: black;
+background-color: #DEE3F5;
 margin: 0;
 padding: 0;
 }
 .main{
-background-color: red;
+background-color: #DEE3F5;
 margin: 0;
 padding: 0;
 }
 .sec{
-background-color: blue;
+background-color: #DEE3F5;
 margin: 0;
 padding: 0;
 }
 .form{
-background-color: green;
+background-color: #DEE3F5;
 margin: 0;
 padding: 0;
 }
 .A-titulos{
-background-color: pink;
+background-color: #DEE3F5;
+margin: 0;
+padding: 0;
+}
+.titulo{
+	color: #6D90EA;
+	margin: 0;
+	padding: 0;
+}
+.subtitulo{
+color: #C2C3E0;
 margin: 0;
 padding: 0;
 }
 .B-usuario{
-background-color: yellow;
+background-color: #DEE3F5;
 margin: 0;
 padding: 0;
+display: flex;
+justify-content: flex-end;
+}
+.nome-idade{
+	background-color: #FF4D68;
 }
 .C-cresente{
-background-color: #FF7F00;
+background-color: #DEE3F5;
 margin: 0;
 padding: 0;
+display: flex;
+justify-content: flex-end;
 }
 .D-Filtrar{
-background-color: #8B668B;
+background-color: #DEE3F5;
 margin: 0;
 padding: 0;
+display: flex;
+justify-content: flex-start;
 }
 </style>
